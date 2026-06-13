@@ -1,0 +1,11 @@
+{
+  "jsonrpc": "2.0",
+  "id": 12,
+  "method": "tools/call",
+  "params": {
+    "name": "jsonMinify",
+    "arguments": {
+      "json": "{\n  \"a\": 1,\n  \"b\": 2\n}"
+    }
+  }
+}

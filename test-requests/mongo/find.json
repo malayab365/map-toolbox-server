@@ -1,0 +1,13 @@
+{
+  "jsonrpc": "2.0",
+  "id": 21,
+  "method": "tools/call",
+  "params": {
+    "name": "mongoFind",
+    "arguments": {
+      "collection": "users",
+      "filterJson": "{\"status\":\"ACTIVE\"}",
+      "limit": 10
+    }
+  }
+}

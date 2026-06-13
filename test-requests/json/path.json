@@ -1,0 +1,12 @@
+{
+  "jsonrpc": "2.0",
+  "id": 13,
+  "method": "tools/call",
+  "params": {
+    "name": "jsonPath",
+    "arguments": {
+      "json": "{\"user\":{\"name\":\"Alice\",\"age\":30}}",
+      "path": "$.user.name"
+    }
+  }
+}

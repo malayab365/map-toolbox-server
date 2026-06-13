@@ -1,0 +1,11 @@
+{
+  "jsonrpc": "2.0",
+  "id": 43,
+  "method": "tools/call",
+  "params": {
+    "name": "redisTtl",
+    "arguments": {
+      "key": "test:key"
+    }
+  }
+}

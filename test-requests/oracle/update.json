@@ -1,0 +1,11 @@
+{
+  "jsonrpc": "2.0",
+  "id": 33,
+  "method": "tools/call",
+  "params": {
+    "name": "oracleUpdate",
+    "arguments": {
+      "sql": "UPDATE employees SET status = 'ACTIVE' WHERE id = 1"
+    }
+  }
+}

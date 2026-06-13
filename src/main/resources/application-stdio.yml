@@ -1,0 +1,19 @@
+# Profile: stdio
+# Run with:  --spring.profiles.active=stdio   (or SPRING_PROFILES_ACTIVE=stdio)
+#
+# STDIO transport hijacks stdout for the MCP protocol, so the web server,
+# the banner and all console logging MUST be turned off. Logs go to a file.
+spring:
+  main:
+    web-application-type: none
+    banner-mode: off
+  ai:
+    mcp:
+      server:
+        stdio: true
+
+logging:
+  pattern:
+    console:
+  file:
+    name: ./mcp-toolbox-server.log

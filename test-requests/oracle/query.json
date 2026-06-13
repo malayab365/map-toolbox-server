@@ -1,0 +1,12 @@
+{
+  "jsonrpc": "2.0",
+  "id": 31,
+  "method": "tools/call",
+  "params": {
+    "name": "oracleQuery",
+    "arguments": {
+      "sql": "SELECT * FROM employees",
+      "maxRows": 5
+    }
+  }
+}

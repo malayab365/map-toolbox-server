@@ -1,0 +1,11 @@
+{
+  "jsonrpc": "2.0",
+  "id": 41,
+  "method": "tools/call",
+  "params": {
+    "name": "redisGet",
+    "arguments": {
+      "key": "test:key"
+    }
+  }
+}

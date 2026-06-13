@@ -1,0 +1,12 @@
+{
+  "jsonrpc": "2.0",
+  "id": 24,
+  "method": "tools/call",
+  "params": {
+    "name": "mongoDelete",
+    "arguments": {
+      "collection": "users",
+      "filterJson": "{\"name\":\"Alice\"}"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "jsonrpc": "2.0",
+  "id": 51,
+  "method": "tools/call",
+  "params": {
+    "name": "kafkaConsume",
+    "arguments": {
+      "topic": "my-topic",
+      "maxRecords": 5,
+      "pollTimeoutMs": 3000
+    }
+  }
+}

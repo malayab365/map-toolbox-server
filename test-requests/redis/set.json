@@ -1,0 +1,13 @@
+{
+  "jsonrpc": "2.0",
+  "id": 40,
+  "method": "tools/call",
+  "params": {
+    "name": "redisSet",
+    "arguments": {
+      "key": "test:key",
+      "value": "hello-world",
+      "ttlSeconds": 300
+    }
+  }
+}

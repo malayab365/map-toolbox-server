@@ -1,0 +1,64 @@
+spring:
+  application:
+    name: mcp-toolbox-server
+
+  # ---- MCP server (Spring AI) ----------------------------------------------
+  ai:
+    mcp:
+      server:
+        name: mcp-toolbox-server
+        version: 0.1.0
+        type: SYNC
+        # SSE transport (WebMVC) is on by default at /sse + /mcp/message.
+        # Flip stdio=true (or use the 'stdio' profile) for STDIO clients.
+        stdio: false
+        sse-message-endpoint: /mcp/message
+
+  # ---- Oracle / JDBC --------------------------------------------------------
+  # HikariCP connects lazily, so the app still boots if Oracle is unreachable;
+  # tool calls fail with a clear error instead.
+  datasource:
+    url: ${ORACLE_URL:jdbc:oracle:thin:@//localhost:1521/XEPDB1}
+    username: ${ORACLE_USER:app}
+    password: ${ORACLE_PASSWORD:app}
+    driver-class-name: oracle.jdbc.OracleDriver
+    hikari:
+      maximum-pool-size: 5
+      connection-timeout: 5000
+
+  # ---- MongoDB --------------------------------------------------------------
+  data:
+    mongodb:
+      uri: ${MONGODB_URI:mongodb://localhost:27017/appdb}
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+      # password: ${REDIS_PASSWORD:}
+      timeout: 5000ms
+
+  # ---- Kafka ----------------------------------------------------------------
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP:localhost:9092}
+    consumer:
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+# ---- IBM MQ / JMS -----------------------------------------------------------
+ibm:
+  mq:
+    queue-manager: ${MQ_QMGR:QM1}
+    channel: ${MQ_CHANNEL:DEV.APP.SVRCONN}
+    conn-name: ${MQ_CONN:localhost(1414)}
+    user: ${MQ_USER:app}
+    password: ${MQ_PASSWORD:passw0rd}
+
+server:
+  port: ${SERVER_PORT:8080}
+
+logging:
+  level:
+    org.springframework.ai.mcp: INFO

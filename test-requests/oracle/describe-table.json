@@ -1,0 +1,11 @@
+{
+  "jsonrpc": "2.0",
+  "id": 32,
+  "method": "tools/call",
+  "params": {
+    "name": "oracleDescribeTable",
+    "arguments": {
+      "tableName": "employees"
+    }
+  }
+}

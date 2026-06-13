@@ -1,0 +1,12 @@
+{
+  "jsonrpc": "2.0",
+  "id": 22,
+  "method": "tools/call",
+  "params": {
+    "name": "mongoInsert",
+    "arguments": {
+      "collection": "users",
+      "documentJson": "{\"name\":\"Alice\",\"status\":\"ACTIVE\",\"age\":30}"
+    }
+  }
+}

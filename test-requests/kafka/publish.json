@@ -1,0 +1,13 @@
+{
+  "jsonrpc": "2.0",
+  "id": 50,
+  "method": "tools/call",
+  "params": {
+    "name": "kafkaPublish",
+    "arguments": {
+      "topic": "my-topic",
+      "message": "hello kafka",
+      "key": "key-1"
+    }
+  }
+}
